@@ -14,12 +14,12 @@ async function creatSearchResult(input) {
       </li>`)
     }
   })
-  return searchResult.join(" ")
+  return searchResult
 }
-function queryResult(input) {
-  const result = creatSearchResult(input)
-  result.then((item) =>
-    document.querySelector(".siteList").insertAdjacentHTML("afterbegin", item)
+async function queryResult(input) {
+  const result = await creatSearchResult(input)
+  result.forEach((item) =>
+    document.querySelector(".siteList").insertAdjacentHTML("beforeend", item)
   )
 }
 function addList() {
@@ -32,8 +32,10 @@ function deleteList() {
     result.removeChild(result.lastChild)
   }
 }
-document.querySelector(".btn").addEventListener("click", (event) => {
+document.querySelector("#searchForm").addEventListener("click", (event) => {
   event.preventDefault()
+})
+document.querySelector(".btn").addEventListener("click", (event) => {
   deleteList()
   addList()
 })
