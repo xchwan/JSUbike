@@ -34,8 +34,6 @@ function deleteList() {
 }
 document.querySelector("#searchForm").addEventListener("submit", (event) => {
   event.preventDefault()
-})
-document.querySelector(".btn").addEventListener("click", (event) => {
   deleteList()
   addList()
 })
