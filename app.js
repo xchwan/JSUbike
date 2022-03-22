@@ -34,6 +34,6 @@ function deleteTodo() {
 }
 document.querySelector(".btn").addEventListener("click", (event) => {
   event.preventDefault()
-  addTodo()
   deleteTodo()
+  addTodo()
 })
