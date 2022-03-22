@@ -32,7 +32,7 @@ function deleteList() {
     result.removeChild(result.lastChild)
   }
 }
-document.querySelector("#searchForm").addEventListener("click", (event) => {
+document.querySelector("#searchForm").addEventListener("submit", (event) => {
   event.preventDefault()
 })
 document.querySelector(".btn").addEventListener("click", (event) => {
