@@ -14,7 +14,7 @@ async function creatsearchresult(input) {
       </li>`)
     }
   })
-  return searchresult
+  return searchresult.join(" ")
 }
 function queryResult(input) {
   const result = creatsearchresult(input)
@@ -26,7 +26,14 @@ function addTodo() {
   const input = document.querySelector("#searchKeyword")
   queryResult(input.value)
 }
+function deleteTodo() {
+  const result = document.querySelector(".siteList")
+  while (result.lastChild) {
+    result.removeChild(result.lastChild)
+  }
+}
 document.querySelector(".btn").addEventListener("click", (event) => {
   event.preventDefault()
   addTodo()
+  deleteTodo()
 })
