@@ -9,7 +9,7 @@ async function creatSearchResult(input) {
     if (element.ar.includes(input)) {
       searchResult.push(`<li class="list-group-item fs-5">
         <i class="fas fa-bicycle"></i>
-        ${element.sna.slice(11)}<br>
+        ${element.sna.slice(11)}(${element.tot})<br>
         <small class="text-muted">${element.ar}</small>
       </li>`)
     }
